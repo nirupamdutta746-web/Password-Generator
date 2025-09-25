@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Password Generator</h1>
+    <br>
+    <br>
+    <div id="choices">
+    <label class="que">How long do you want your password to be? </label>
+    <input type="number" id="length" min="8" max="128" value="8" style="font-size: 25px; font-weight: bold;">
+    <br>
+    <label class="que">Do you want to include Special Characters: </label>
+    <input type="radio" name="box" value="true" class="radio-group"> YES
+    <input type="radio" name="box" value="false" class="radio-group"> NO
+    <br>
+    <label class="que">Do you want to include Numbers: &nbsp;</label>
+    <input type="radio" name="box2" value="true" class="radio-group"> YES
+    <input type="radio" name="box2" value="false" class="radio-group"> NO
+    <br>
+    <label class="que">Do you want to include UpperCase: </label>
+    <input type="radio" name="box3" value="true" class="radio-group"> YES
+    <input type="radio" name="box3" value="false" class="radio-group"> NO
+    <br>
+    <label class="que">Do you want to include LowerCase: </label>
+    <input type="radio" name="box4" value="true" class="radio-group"> YES
+    <input type="radio" name="box4" value="false" class="radio-group"> NO
+    <br>
+    </div>
+    <button id="btn2" onclick="submit()">Submit</button>
+    <div id="pass"></div>
+    <br>
+    <br>
+    <h1 id="s2">Strength Indicator</h1>
+    <span id="np">Enter new Password to check its Strength :&nbsp;</span>
+    <input type="text" id="test">&nbsp;&nbsp;&nbsp;<button id="btn3" onclick="str_check()">Submit</button>
+    <br>
+    <label id="stren" style="display:block;min-height:80px;background:#111;border:2px solid #00ff15;padding:18px 12px;margin-top:12px;font-size:1.3rem;color:#00ff15;text-align:center;border-radius:12px;box-shadow:0 0 12px #00ff1570;"></label>
+    <div id="breach-check-container">
+        <button id="breachCheckBtn">Check Breach Database 🔍</button>
+        <div id="breachResult"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1>Pass Phrase Generator</h1>
+    <div class="info">
+        <p>Random password is hard to remember. No worries! Pass Phrase generator is here to save the day.</p>
+        <p>Generate easy to remember pass phrases with customizable number of words and the inclusion of Special Characters or Numbers.</p>
+        <p>An easy and secure way to make strong passwords which are Hack-proof while being easy to remember.</p>
+    <br>
+    <div class="container">
+
+        <div class="text">
+            <textarea id="Pass_Phrase"></textarea>
+            <button id="gen" onclick="gen_passphrase()">Generate</button>
+        </div>
+        <div class="enhancements">
+            <input type="checkbox" id="useEmoji" class="checkbox">
+            <label for="useEmoji">Use Emoji Separators</label>
+        </div>
+
+        <div class="time">
+            <button id="copy">COPY!</button>
+        </div>
+        <div id="passphrase-strength" style="color:#fff; font-size:1.2rem; margin-top:5px; text-align:center;"></div>
+        <style>
+        #passphrase-strength {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+            min-height: 2.5em;
+        }
+        #passphrase-strength .strength-label {
+            font-size: 1.2em;
+            color: #00ff15;
+            margin-right: 10px;
+        }
+        #passphrase-strength .crack-label {
+            color: #00e0ff;
+            margin-left: 10px;
+        }
+        </style>
+        </div>
+
+        <div class="slider">
+            <br>
+            <label for="slide" id="sl">Number of words : <span id="SL"></span></label>
+            <input type="range" min="1" max="10" value="5" id="slide">
+            <br>
+        </div>
+        <div class="ch">
+            <input type="checkbox" id="check1" class="checkbox">
+            <label for="check1" id="check_1">Include Special Characters</label>
+
+            <input type="checkbox" id="check2" class="checkbox">
+            <label for="check2" id="check_2">Include Numbers</label>
+
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="note">Note: Please select at least one option from the above choices.
+        <ul>
+            <li>Password size should be atleast 8</li>
+            <li>Password should include atleast one special character</li>
+            <li>Password should include atleast one digit</li>
+            <li>Password should include atleast one Upper Case character</li>
+            <li>Password should include atleast one Lower Case character</li>
+        </ul>
+    </div>
+    
+
+    <script src="logic.js"></script>
+</body>
+
+</html>
